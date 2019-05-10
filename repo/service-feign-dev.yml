@@ -1,0 +1,25 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+server:
+  port: 8764
+  #port: 8765
+spring:
+  application:
+    name: service-feign
+    #name: service-feign-one
+    #name: service-feign-two
+  thymeleaf:
+    encoding: utf-8
+    prefix: classpath:/templates/
+    suffix: .html
+    cache: false
+  #data:
+    #solr:
+      #host: http://localhost:8090/solr
+feign:
+  hystrix:
+    enabled: false
+  httpclient:
+    enabled: true
