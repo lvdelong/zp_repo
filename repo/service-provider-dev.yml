@@ -4,7 +4,7 @@ server:
 spring:
   application:
     name: zp-provider
-foo : 3
+foo : 4
 
 eureka:
   client:
