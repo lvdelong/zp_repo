@@ -1,34 +1,29 @@
 server:
   port: 8082
-
-spring:
-  application:
-    name: zp-provider
-foo : 4
-
 eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8080/eureka/
+spring:
+  application:
+    name: zp-provider
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/zp?ServerTimezone=HongKong&useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: root
+mybatis:
+  config-locations: classpath:mybatis/confg.xml
+  mapper-locations: classpath:mybatis/mapper/*.xml
 
-      datasource:
-        driverClassName: com.mysql.jdbc.Driver
-        url: jdbc:mysql://127.0.0.1:3306/zp?ServerTimezone=HongKong&useUnicode=true&characterEncoding=utf-8
-        username: root
-        password: root
-
-      mybatis:
-        config-locations: classpath:mybatis/confg.xml
-        mapper-locations: classpath:mybatis/mapper/*.xml
-#
-#      redis:
-#        database: 0
-#        host: localhost
-#        password: ''
-#        pool:
-#          max-active: 8
-#          max-idle: 8
-#          max-wait: -1
-#          min-idle: 0
-#        port: 6379
-#        timeout: 0
+#redis:
+#  database: 0
+#  host: localhost
+#  password: ''
+#  pool:
+#    max-active: 8
+#    max-idle: 8
+#    max-wait: -1
+#    min-idle: 0
+#  port: 6379
+#  timeout: 0
